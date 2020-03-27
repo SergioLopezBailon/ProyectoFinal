@@ -12,10 +12,13 @@
     <title>Bienvenido</title>
 </head>
 <body>
+
     <div class="container mt-5 text-center">
         <h1>Bienvenido a </h1>
-        <a href="#" class="btn btn-outline-light btn-lg">Login</a>
-        <a href="#" class="btn btn-outline-light btn-lg">Register</a>
+        <a href="{{route('login') }}" class="btn btn-outline-light btn-lg">Login</a>
+        @if (Route::has('register'))
+            <a href="{{ route('register') }}" class="btn btn-outline-light btn-lg">Register</a>
+        @endif
     </div>
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
         <p>Si continuas navegando por esta página web aceptas nuestras cookies y que eres mayor de asdfasd 18 años.</p>
