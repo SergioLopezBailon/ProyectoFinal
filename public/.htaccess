@@ -20,4 +20,5 @@
     RewriteRule ^ index.php [L]
 </IfModule>
 
+# Alias rutas apache Laravel.
 RewriteBase /proyecto
