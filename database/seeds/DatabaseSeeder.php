@@ -22,5 +22,13 @@ class DatabaseSeeder extends Seeder
             'payment'=>'PayPal'
         ]);
         
+        DB::table('users')->insert([
+            'name' => 'sergio',
+            'email' => 'sergio@gmail.com',
+            'password' => Hash::make('sergio'),
+            'balance' => 0,
+            'rol'=>'user',
+            'payment'=>'PayPal'
+        ]);
     }
 }

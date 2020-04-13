@@ -20,7 +20,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/perfil', function () {
-    return view('user.perfil');
-})->middleware("auth");
+//User routes
+Route::get('/user/perfil','UserController@perfil')->middleware('auth')->name('user.perfil');
+Route::get('/user/{user}/edit','UserController@edit')->middleware('auth')->name('user.edit');
+Route::delete('/user/{user}','UserController@destroy')->middleware('auth')->name('user.delete');
+Route::put('/user/{user}','UserController@update')->middleware('auth')->name('user.update');
+//Admin routes
+Route::get('/admin/panel','AdminController@panel')->middleware("auth","rol")->name('admin.panel');
+Route::put('/admin/{user}','AdminController@update')->middleware('auth','rol')->name('admin.update');
+Route::delete('/admin/{user}','AdminController@delete')->middleware('auth','rol')->name('admin.delete');

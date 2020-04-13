@@ -7,7 +7,3 @@ function admin($rol){
         return false;
     }
 }
-
-function home(){
-    return redirect()->route('home');
-}
