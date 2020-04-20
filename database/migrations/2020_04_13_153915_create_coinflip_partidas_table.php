@@ -15,9 +15,14 @@ class CreateCoinflipPartidasTable extends Migration
     {
         Schema::create('coinflip_partidas', function (Blueprint $table) {
             $table->id();
-            $table->idUser1();
-            $table->
+            $table->unsignedBigInteger('idUser1');
+            $table->unsignedBigInteger('idUser2');
+            $table->string('winner');
+            $table->string('status');
+            $table->unsignedDouble('quantity');
             $table->timestamps();
+            $table->foreign('idUser1')->references('id')->on('users');
+            $table->foreign('idUser2')->references('id')->on('users');
         });
     }
 

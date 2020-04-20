@@ -15,7 +15,15 @@ class CreateBuscaminasPartidasTable extends Migration
     {
         Schema::create('buscaminas_partidas', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('idUser');
+            $table->integer('idMode');
+            $table->unsignedDouble('multuplicator');
+            $table->unsignedDouble('quantity');
+            $table->string('status');
+            $table->unsignedDouble('result');
+            $table->string('map');
             $table->timestamps();
+            $table->foreign('idUser')->references('id')->on('users');
         });
     }
 

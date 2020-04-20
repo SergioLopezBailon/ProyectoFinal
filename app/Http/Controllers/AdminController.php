@@ -17,11 +17,12 @@ class AdminController extends Controller
     {
         $rol = $request->rol;
         $user->update(['rol'=>$rol]);
-        return redirect()->route('admin.panel')->with('mensaje','Rol cambiado con éxito');
+        return redirect()->route('user.index')->with('mensaje','Rol cambiado con éxito');
     }
 
     public function destroy(User $user){
+
         $user->delete();
-        return redirect()->route('admin.panel')->with('mensaje','Usuario borrado con exito');
+        return redirect()->route('user.index')->with('mensaje','Usuario borrado con exito');
     }
 }

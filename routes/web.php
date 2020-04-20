@@ -17,15 +17,38 @@ Route::get('/', function () {
     return view('index');
 });
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-//User routes
-Route::get('/user/perfil','UserController@perfil')->middleware('auth')->name('user.perfil');
-Route::get('/user/{user}/edit','UserController@edit')->middleware('auth')->name('user.edit');
-Route::delete('/user/{user}','UserController@destroy')->middleware('auth')->name('user.delete');
-Route::put('/user/{user}','UserController@update')->middleware('auth')->name('user.update');
+
 //Admin routes
 Route::get('/admin/panel','AdminController@panel')->middleware("auth","rol")->name('admin.panel');
 Route::put('/admin/{user}','AdminController@update')->middleware('auth','rol')->name('admin.update');
-Route::delete('/admin/{user}','AdminController@delete')->middleware('auth','rol')->name('admin.delete');
+Route::delete('/admin/{user}','AdminController@destroy')->middleware('auth','rol')->name('admin.delete');
+
+//Juegos
+Route::resource('/ruleta','RuletaController');
+Route::resource('/crash','CrashController');
+Route::resource('/buscaminas','BuscaminasController');
+Route::resource('/coinflip','CoinflipController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
+
+
+Route::group(['middleware' => 'auth'], function () {
+		Route::get('icons', ['as' => 'pages.icons', 'uses' => 'PageController@icons']);
+		Route::get('maps', ['as' => 'pages.maps', 'uses' => 'PageController@maps']);
+		Route::get('notifications', ['as' => 'pages.notifications', 'uses' => 'PageController@notifications']);
+		Route::get('rtl', ['as' => 'pages.rtl', 'uses' => 'PageController@rtl']);
+		Route::get('tables', ['as' => 'pages.tables', 'uses' => 'PageController@tables']);
+		Route::get('typography', ['as' => 'pages.typography', 'uses' => 'PageController@typography']);
+		Route::get('upgrade', ['as' => 'pages.upgrade', 'uses' => 'PageController@upgrade']);
+});
+
+Route::group(['middleware' => 'auth'], function () {
+	Route::resource('user', 'UserController', ['except' => ['show']]);
+	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
+	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+});
+

@@ -15,6 +15,8 @@ class CreateCrashPartidasTable extends Migration
     {
         Schema::create('crash_partidas', function (Blueprint $table) {
             $table->id();
+            $table->string('status');
+            $table->unsignedDouble('finalNumber');
             $table->timestamps();
         });
     }

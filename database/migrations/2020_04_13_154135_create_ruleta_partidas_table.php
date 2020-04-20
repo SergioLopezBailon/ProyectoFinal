@@ -15,6 +15,8 @@ class CreateRuletaPartidasTable extends Migration
     {
         Schema::create('ruleta_partidas', function (Blueprint $table) {
             $table->id();
+            $table->string('status');
+            $table->string('winner');
             $table->timestamps();
         });
     }

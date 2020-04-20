@@ -44,4 +44,18 @@ class User extends Authenticatable
             'rol'=>$user->rol
         ]);
     }
+
+    //Relaciones
+    public function apuestas_crash(){
+        return $this->hasMany('Apuestas_Crash');
+    }
+    public function apuestas_ruleta(){
+        return $this->hasMany('Apuestas_Ruleta');
+    }
+    public function buscaminas_partidas(){
+        return $this->hasMany('Buscaminas_Partidas');
+    }
+    public function coinflip_partidas(){
+        return $this->hasMany('Coinflip_Partidas');
+    }
 }
