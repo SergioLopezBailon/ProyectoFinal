@@ -21,9 +21,14 @@
         <link href="{{ asset('black') }}/css/theme.css" rel="stylesheet" />
     </head>
     <body class="{{ $class ?? '' }}">
-        @auth()
+        @if (!(isset($ocultarBarra) && $ocultarBarra == 'true'))
             <div class="wrapper">
+               
+
                     @include('layouts.navbars.sidebar')
+
+                
+                    
                 <div class="main-panel">
                     @include('layouts.navbars.navbar')
 
@@ -34,9 +39,6 @@
                     @include('layouts.footer')
                 </div>
             </div>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
         @else
             @include('layouts.navbars.navbar')
             <div class="wrapper wrapper-full-page">
@@ -49,7 +51,10 @@
                     @include('layouts.footer')
                 </div>
             </div>
-        @endauth
+        @endif
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
         <script src="{{ asset('black') }}/js/core/jquery.min.js"></script>
         <script src="{{ asset('black') }}/js/core/popper.min.js"></script>
         <script src="{{ asset('black') }}/js/core/bootstrap.min.js"></script>

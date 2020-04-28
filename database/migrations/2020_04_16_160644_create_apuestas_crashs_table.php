@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateApuestasRuletaTable extends Migration
+class CreateApuestasCrashsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateApuestasRuletaTable extends Migration
      */
     public function up()
     {
-        Schema::create('apuestas_ruleta', function (Blueprint $table) {
+        Schema::create('apuestas_crashs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('idUser');
             $table->unsignedBigInteger('idGame');
             $table->unsignedDouble('quantity');
+            $table->unsignedDouble('withdraw');
             $table->unsignedDouble('result');
-            $table->string('color'); 
             $table->timestamps();
             $table->foreign('idUser')->references('id')->on('users');
-            $table->foreign('idGame')->references('id')->on('ruleta_partidas');
+            $table->foreign('idGame')->references('id')->on('crash_partidas');
         });
     }
 
@@ -33,6 +33,6 @@ class CreateApuestasRuletaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('apuestas_ruleta');
+        Schema::dropIfExists('apuestas_crash');
     }
 }

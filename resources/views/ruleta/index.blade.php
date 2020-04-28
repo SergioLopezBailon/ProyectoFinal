@@ -1,4 +1,6 @@
-@extends('layouts.app1')
+@extends('layouts.app',['pageSlug' => 'ruleta'])
 @section('content')
-    <div class="container"><h3>Hola</h3></div>
+<div class="container text-center">
+    <canvas ></canvas>    
+</div>
 @endsection

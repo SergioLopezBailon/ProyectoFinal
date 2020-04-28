@@ -21,7 +21,6 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->double('balance')->unsigned()->default('0');
             $table->string('rol')->default('user');
-            $table->string('payment')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -39,23 +39,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function setSession(Request $request, $user){
-        Session::put([
-            'rol'=>$user->rol
-        ]);
-    }
 
     //Relaciones
     public function apuestas_crash(){
-        return $this->hasMany('Apuestas_Crash');
+        return $this->hasMany('App\ApuestasCrash');
     }
     public function apuestas_ruleta(){
-        return $this->hasMany('Apuestas_Ruleta');
+        return $this->hasMany('App\ApuestasRuleta');
     }
     public function buscaminas_partidas(){
-        return $this->hasMany('Buscaminas_Partidas');
+        return $this->hasMany('App\BuscaminasPartidas');
     }
     public function coinflip_partidas(){
-        return $this->hasMany('Coinflip_Partidas');
+        return $this->hasMany('App\CoinflipPartidas');
     }
+
 }

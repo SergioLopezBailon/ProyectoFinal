@@ -11,13 +11,13 @@
                     <p>{{ __('Dashboard') }}</p>
                 </a>
             </li>
+            @auth
             <li>
                 <a data-toggle="collapse" href="#laravel-examples" aria-expanded="true">
                     <i class="fab fa-laravel" ></i>
                     <span class="nav-link-text" >{{ __('Laravel Examples') }}</span>
                     <b class="caret mt-1"></b>
                 </a>
-
                 <div class="collapse show" id="laravel-examples">
                     <ul class="nav pl-4">
                         <li @if ($pageSlug  == 'profile') class="active " @endif>
@@ -26,15 +26,19 @@
                                 <p>{{ __('User Profile') }}</p>
                             </a>
                         </li>
-                        <li @if ($pageSlug  == 'users') class="active " @endif>
-                            <a href="{{ route('user.index')  }}">
-                                <i class="tim-icons icon-bullet-list-67"></i>
-                                <p>{{ __('User Management') }}</p>
-                            </a>
-                        </li>
+                        @if (Auth::user()->rol == "admin")
+                            <li @if ($pageSlug  == 'users') class="active " @endif>
+                                <a href="{{ route('user.index')  }}">
+                                    <i class="tim-icons icon-bullet-list-67"></i>
+                                    <p>{{ __('User Management') }}</p>
+                                </a>
+                            </li>    
+                        @endif
+                        
                     </ul>
                 </div>
-            </li>
+            </li> 
+            @endauth
             <li @if ($pageSlug  == 'icons') class="active " @endif>
                 <a href="{{ route('pages.icons') }}">
                     <i class="tim-icons icon-atom"></i>
@@ -65,16 +69,10 @@
                     <p>{{ __('Typography') }}</p>
                 </a>
             </li>
-            <li @if ($pageSlug == 'rtl') class="active " @endif>
-                <a href="{{ route('pages.rtl') }}">
-                    <i class="tim-icons icon-world"></i>
-                    <p>{{ __('RTL Support') }}</p>
-                </a>
-            </li>
-            <li class=" {{ $pageSlug == 'upgrade' ? 'active' : '' }} bg-info">
-                <a href="{{ route('pages.upgrade') }}">
-                    <i class="tim-icons icon-spaceship"></i>
-                    <p>{{ __('Upgrade to PRO') }}</p>
+            <li @if ($pageSlug == 'ruleta') class="active " @endif>
+                <a href="{{ route('ruleta.index') }}">
+                    <i class="tim-icons icon-atom"></i>
+                    <p>{{ __('Ruleta') }}</p>
                 </a>
             </li>
         </ul>

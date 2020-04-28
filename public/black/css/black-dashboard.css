@@ -1874,7 +1874,6 @@ pre code {
 
 .form-control:disabled,
 .form-control[readonly] {
-  background-color: #e9ecef;
   opacity: 1;
 }
 
@@ -16380,13 +16379,10 @@ code {
   border-left: 0 none;
 }
 
-.form-control[disabled],
+/*.form-control[disabled],
 .form-control[readonly],
 fieldset[disabled] .form-control {
-  background-color: #1d253b;
-  color: #344675;
-  cursor: not-allowed;
-}
+}*/
 
 .input-group-btn .btn {
   border-width: 1px;

@@ -43,13 +43,6 @@
         <!-- CSS -->
         <link href="{{ asset('black') }}/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
         <link href="{{ asset('black') }}/css/theme.css" rel="stylesheet" />
-        <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-NKDMSK6');</script>
-        <!-- End Google Tag Manager -->
     </head>
 <body class="">
             <!-- Google Tag Manager (noscript) -->
@@ -249,15 +242,15 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-8">
-                        <h4 class="card-title">Users</h4>
+                        <h3 class="card-title"><b>Users</b></h3>
                     </div>
                 </div>
             </div>
             <div class="card-body">
                 
                 <div class="">
-                    <table class="table tablesorter " id="">
-                        <thead class=" text-primary">
+                    <table class="table tablesorter" id="">
+                        <thead class="text-primary text-center">
                             <tr>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Email</th>
@@ -267,33 +260,47 @@
                                 <th scope="col"></th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody class="text-center">
                             @foreach ($users as $user)
 
                             <tr>
                                 <td scope="col">{{$user->name}}</td>
                                 <td scope="col">{{$user->email}}</td>
                                 <td scope="col">{{$user->balance}}</td>
-                                <td scope="col">{{$user->rol}}</td>
+                                <td scope="col">
+                                    <form action="{{route('admin.update',$user)}}" method="POST" class="form" onchange="this.submit()">
+                                        @csrf
+                                        @method('PUT')
+                                        <select name="rol" class="form-control">
+                                        @foreach ($roles as $rol)    
+                                        
+                                            @if ($rol==$user->rol)
+                                                <option value="{{$rol}}" selected>{{$rol}}</option>    
+                                            @else
+                                                <option value="{{$rol}}">{{$rol}}</option>    
+                                            @endif
+                                        
+                                        @endforeach
+                                    </select>
+                                    </form>
+                                </td>
                                 <td scope="col">{{$user->payment}}</td>
                                 <td scope="col">
-                                    <form action="{{route('admin.delete',$user)}}" method="POST" class="form-inline">
+                                    <form  action="{{route('admin.delete',$user)}}" method="POST" class="form-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger"><i class="tim-icons icon-trash-simple"></i></button>
-                                        <button type="submit" class="btn btn-warning ml-3"><i class="tim-icons icon-pencil"></i></a>
+                                        <button type="submit" class="btn btn-danger" onclick="return confirm('¿Seguro que quieres borrar este usuario?')"><i class="tim-icons icon-trash-simple"></i></button>
                                     </form>
                                 </td>
                             </tr>    
                             @endforeach
-                            
                         </tbody>
                    </table>
                 </div>
             </div>
             <div class="card-footer py-4">
                 <nav class="d-flex justify-content-end" aria-label="...">
-                    
+                    {{$users->links()}}
                 </nav>
             </div>
         </div>
@@ -321,7 +328,7 @@
 
     <script src="{{ asset('black') }}/js/black-dashboard.min.js?v=1.0.0"></script>
     <script src="{{ asset('black') }}/js/theme.js"></script>
-
+    
     @stack('js')
 
     <script>
@@ -460,5 +467,11 @@
     <noscript>
     <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=111649226022273&ev=PageView&noscript=1" />
     </noscript>
+    <!-- Comprobaciones -->
+    @if (Session::has('mensaje'))
+        <script>
+             demo.showNotification('top','center','2','{{session('mensaje')}}');
+        </script>
+    @endif
 </body>
 </html>

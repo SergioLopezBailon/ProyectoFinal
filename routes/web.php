@@ -29,26 +29,29 @@ Route::resource('/ruleta','RuletaController');
 Route::resource('/crash','CrashController');
 Route::resource('/buscaminas','BuscaminasController');
 Route::resource('/coinflip','CoinflipController');
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 
-Route::group(['middleware' => 'auth'], function () {
-		Route::get('icons', ['as' => 'pages.icons', 'uses' => 'PageController@icons']);
-		Route::get('maps', ['as' => 'pages.maps', 'uses' => 'PageController@maps']);
-		Route::get('notifications', ['as' => 'pages.notifications', 'uses' => 'PageController@notifications']);
-		Route::get('rtl', ['as' => 'pages.rtl', 'uses' => 'PageController@rtl']);
-		Route::get('tables', ['as' => 'pages.tables', 'uses' => 'PageController@tables']);
-		Route::get('typography', ['as' => 'pages.typography', 'uses' => 'PageController@typography']);
-		Route::get('upgrade', ['as' => 'pages.upgrade', 'uses' => 'PageController@upgrade']);
+Route::group([], function () {
+	Route::get('icons', ['as' => 'pages.icons', 'uses' => 'PageController@icons']);
+	Route::get('maps', ['as' => 'pages.maps', 'uses' => 'PageController@maps']);
+	Route::get('notifications', ['as' => 'pages.notifications', 'uses' => 'PageController@notifications']);
+	Route::get('rtl', ['as' => 'pages.rtl', 'uses' => 'PageController@rtl']);
+	Route::get('tables', ['as' => 'pages.tables', 'uses' => 'PageController@tables']);
+	Route::get('typography', ['as' => 'pages.typography', 'uses' => 'PageController@typography']);
+	Route::get('upgrade', ['as' => 'pages.upgrade', 'uses' => 'PageController@upgrade']);
 });
 
-Route::group(['middleware' => 'auth'], function () {
-	Route::resource('user', 'UserController', ['except' => ['show']]);
-	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
-	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
-	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
-});
+Route::resource('user', 'UserController', ['except' => ['show']])->middleware('rol');
+Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
+Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 
+
+//prueba pago
+Route::get('/pago/{user}',function(){
+	return view('pago.pago');
+})->name('pago.pago')->middleware('auth');
+Route::post('/pago1/{user}','PagoController@pago')->middleware("auth")->name('pago.update');
