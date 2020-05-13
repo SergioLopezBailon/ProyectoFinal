@@ -28,7 +28,8 @@ Route::delete('/admin/{user}','AdminController@destroy')->middleware('auth','rol
 Route::resource('/ruleta','RuletaController');
 Route::resource('/crash','CrashController');
 Route::resource('/buscaminas','BuscaminasController');
-Route::resource('/coinflip','CoinflipController');
+Route::resource('/coinflip','CoinflipController')->except('create','edit','show');
+Route::put('/coinflip/jugar/{coinflip}','CoinflipController@jugar')->name('coinflip.jugar')->middleware('auth');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();

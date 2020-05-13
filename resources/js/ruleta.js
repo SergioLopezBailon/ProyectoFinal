@@ -1,0 +1,3 @@
+
+window.Winwheel = require('winwheel');
+

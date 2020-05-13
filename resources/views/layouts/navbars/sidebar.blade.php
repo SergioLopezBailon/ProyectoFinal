@@ -75,6 +75,24 @@
                     <p>{{ __('Ruleta') }}</p>
                 </a>
             </li>
+            <li @if ($pageSlug == 'buscaminas') class="active " @endif>
+                <a href="{{ route('buscaminas.index') }}">
+                    <i class="tim-icons icon-controller"></i>
+                    <p>{{ __('Buscaminas') }}</p>
+                </a>
+            </li>
+            <li @if ($pageSlug == 'coinflip') class="active " @endif>
+                <a href="{{ route('coinflip.index') }}">
+                    <i class="tim-icons icon-support-17"></i>
+                    <p>{{ __('Coinflip') }}</p>
+                </a>
+            </li>
+            <li @if ($pageSlug == 'crash') class="active " @endif>
+                <a href="{{ route('crash.index') }}">
+                    <i class="tim-icons icon-support-17"></i>
+                    <p>{{ __('Crash') }}</p>
+                </a>
+            </li>
         </ul>
     </div>
 </div>

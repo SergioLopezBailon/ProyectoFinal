@@ -14,7 +14,7 @@ class BuscaminasController extends Controller
      */
     public function index()
     {
-        //
+        return view('buscaminas.index');
     }
 
     /**

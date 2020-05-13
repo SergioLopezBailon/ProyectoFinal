@@ -169,6 +169,6 @@
                 });
             });
         </script>
-        @stack('js')
+        @stack('js1')
     </body>
 </html>
