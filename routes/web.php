@@ -25,9 +25,16 @@ Route::put('/admin/{user}','AdminController@update')->middleware('auth','rol')->
 Route::delete('/admin/{user}','AdminController@destroy')->middleware('auth','rol')->name('admin.delete');
 
 //Juegos
-Route::resource('/ruleta','RuletaController');
+Route::resource('/ruleta','RuletaController')->except('create','edit','show');
+Route::post('/ruleta/nueva','RuletaController@storeRuleta')->name('ruleta.nueva');
+Route::get('/ruleta/pregunta','RuletaController@preguntaStatus');
+Route::put('/ruleta/jugar/{ruletum}','RuletaController@jugar')->name('ruleta.jugar');
+Route::post('/ruleta/storeApuestas','RuletaController@storeApuestas');
+Route::get('/ruleta/todasApuestas/{id}','RuletaController@devolverApuestas');
+Route::get('/ruleta/ganador/{id}','RuletaController@ganador');
+Route::get('/ruleta/balance/{id}','RuletaController@actualizarBalance');
 Route::resource('/crash','CrashController');
-Route::resource('/buscaminas','BuscaminasController');
+Route::resource('/buscaminas','BuscaminasController')->except('create','edit','show')->middleware('auth');
 Route::resource('/coinflip','CoinflipController')->except('create','edit','show');
 Route::put('/coinflip/jugar/{coinflip}','CoinflipController@jugar')->name('coinflip.jugar')->middleware('auth');
 

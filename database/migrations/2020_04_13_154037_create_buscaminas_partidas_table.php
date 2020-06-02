@@ -17,11 +17,11 @@ class CreateBuscaminasPartidasTable extends Migration
             $table->id();
             $table->unsignedBigInteger('idUser');
             $table->integer('idMode');
-            $table->unsignedDouble('multuplicator');
+            $table->unsignedDouble('multiplicator');
             $table->unsignedDouble('quantity');
             $table->string('status');
-            $table->unsignedDouble('result');
-            $table->string('map');
+            $table->unsignedDouble('result')->nullable();
+            $table->string('map')->nullable();
             $table->timestamps();
             $table->foreign('idUser')->references('id')->on('users');
         });

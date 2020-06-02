@@ -18,7 +18,7 @@ class CreateApuestasRuletasTable extends Migration
             $table->unsignedBigInteger('idUser');
             $table->unsignedBigInteger('idGame');
             $table->unsignedDouble('quantity');
-            $table->unsignedDouble('result');
+            $table->unsignedDouble('result')->nullable();
             $table->string('color'); 
             $table->timestamps();
             $table->foreign('idUser')->references('id')->on('users');

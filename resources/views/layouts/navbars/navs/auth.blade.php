@@ -17,7 +17,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <li class="nav-item" id="balance">
                     {{__(Auth::user()->balance)}}
                     <i class="tim-icons icon-coins"></i>
                     
