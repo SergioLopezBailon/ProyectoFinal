@@ -19,39 +19,39 @@
             <div class="card-body">
                 <div class="ml-auto mr-auto">
                     <div>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="0" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="1" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="2" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="3" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="4" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="0" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="1" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="2" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="3" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="4" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
                     </div>
                     <div>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="5" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="6" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="7" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="8" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="9" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="5" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="6" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="7" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="8" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="9" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
                     </div>
                     <div>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="10" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="11" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="12" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="13" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="14" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="10" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="11" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="12" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="13" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="14" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
                     </div>
                     <div>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="15" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="16" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="17" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="18" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="19" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="15" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="16" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="17" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="18" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="19" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
                     </div>
                     <div>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="20" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="21" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="22" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="23" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="24" onclick="comprobar(this)"><i class="fas fa-coins"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="20" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="21" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="22" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="23" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="24" onclick="comprobar(this)"><i class="fas fa-question"></i></span>
                     </div>
                 </div>
                 <br/>
@@ -79,7 +79,7 @@
             }
             
             function añadirBombas(mapa){
-                for (let index = 0; index < 24; index++) {
+                for (let index = 0; index < mapa.length; index++) {
                     document.getElementById(index.toString()).setAttribute('value',mapa[index]);
                 }
             }
@@ -90,9 +90,22 @@
                     alert("Has perdido.");
                     document.getElementById("victoria").setAttribute("value","false");
                     document.getElementById("form").submit();
+                    e.firstChild.classList.remove('fas');
+                    e.firstChild.classList.remove('fa-question');
+                    e.firstChild.classList.add('fa');
+                    e.firstChild.classList.add('fa-bomb');
+                }else{
+                    e.firstChild.classList.remove('fas');
+                    e.firstChild.classList.remove('fa-question');
+                    e.firstChild.classList.add('fas');
+                    e.firstChild.classList.add('fa-coins');
+                    e.firstChild.classList.add('textoamarillo');
                 }
                 comprobarContador();
                 e.style.pointerEvents = "none";
+                console.log(e);
+                
+                
             }
 
             function comprobarContador(){
@@ -148,39 +161,39 @@
             <div class="card-body">
                 <div class="ml-auto mr-auto">
                     <div>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="0"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="1"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="2"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="3"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="4"><i class="fas fa-coins"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="0"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="1"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="2"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="3"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="4"><i class="fas fa-question"></i></span>
                     </div>
                     <div>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="5"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="6"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="7"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="8"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="9"><i class="fas fa-coins"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="5"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="6"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="7"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="8"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="9"><i class="fas fa-question"></i></span>
                     </div>
                     <div>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="10"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="11"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="12"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="13"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="14"><i class="fas fa-coins"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="10"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="11"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="12"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="13"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="14"><i class="fas fa-question"></i></span>
                     </div>
                     <div>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="15"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="16"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="17"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="18"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="19"><i class="fas fa-coins"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="15"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="16"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="17"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="18"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="19"><i class="fas fa-question"></i></span>
                     </div>
                     <div>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="20"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="21"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="22"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="23"><i class="fas fa-coins"></i></span>
-                        <span class="border border-white mr-2 mt-2 p-1" style="font-size:70px;" id="24"><i class="fas fa-coins"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="20"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="21"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="22"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="23"><i class="fas fa-question"></i></span>
+                        <span class="border border-white mr-2 mt-2 p-1 bombas"  id="24"><i class="fas fa-question"></i></span>
                     </div>
                 </div>
                 <br/>

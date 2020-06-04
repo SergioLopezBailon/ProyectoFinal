@@ -63,70 +63,34 @@
                                                 <p>{{ _('Dashboard') }}</p>
                                             </a>
                                         </li>
-                                        <li>
-                                            <a data-toggle="collapse" href="#laravel-examples" aria-expanded="true">
-                                                <i class="fab fa-laravel" ></i>
-                                                <span class="nav-link-text" >{{ __('Laravel Examples') }}</span>
-                                                <b class="caret mt-1"></b>
-                                            </a>
-                            
-                                            <div class="collapse show" id="laravel-examples">
-                                                <ul class="nav pl-4">
-                                                    <li >
-                                                        <a href="{{ route('profile.edit')  }}">
-                                                            <i class="tim-icons icon-single-02"></i>
-                                                            <p>{{ _('User Profile') }}</p>
-                                                        </a>
-                                                    </li>
-                                                    <li class="active">
-                                                        <a href="{{ route('user.index')  }}">
-                                                            <i class="tim-icons icon-bullet-list-67"></i>
-                                                            <p>{{ _('User Management') }}</p>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
                                         <li >
-                                            <a href="{{ route('pages.icons') }}">
+                                            <a href="{{ route('profile.edit')  }}">
+                                                <i class="tim-icons icon-single-02"></i>
+                                                <p>{{ _('User Profile') }}</p>
+                                            </a>
+                                        </li>
+                                        <li class="active">
+                                            <a href="{{ route('user.index')  }}">
+                                                <i class="tim-icons icon-bullet-list-67"></i>
+                                                <p>{{ _('User Management') }}</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('ruleta.index') }}">
                                                 <i class="tim-icons icon-atom"></i>
-                                                <p>{{ _('Icons') }}</p>
-                                            </a>
-                                        </li>
-                                        <li >
-                                            <a href="{{ route('pages.maps') }}">
-                                                <i class="tim-icons icon-pin"></i>
-                                                <p>{{ _('Maps') }}</p>
-                                            </a>
-                                        </li>
-                                        <li >
-                                            <a href="{{ route('pages.notifications') }}">
-                                                <i class="tim-icons icon-bell-55"></i>
-                                                <p>{{ _('Notifications') }}</p>
-                                            </a>
-                                        </li>
-                                        <li >
-                                            <a href="{{ route('pages.tables') }}">
-                                                <i class="tim-icons icon-puzzle-10"></i>
-                                                <p>{{ _('Table List') }}</p>
-                                            </a>
-                                        </li>
-                                        <li >
-                                            <a href="{{ route('pages.typography') }}">
-                                                <i class="tim-icons icon-align-center"></i>
-                                                <p>{{ _('Typography') }}</p>
-                                            </a>
-                                        </li>
-                                        <li >
-                                            <a href="{{ route('pages.rtl') }}">
-                                                <i class="tim-icons icon-world"></i>
-                                                <p>{{ _('RTL Support') }}</p>
+                                                <p>{{ __('Ruleta') }}</p>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="{{ route('pages.upgrade') }}">
-                                                <i class="tim-icons icon-spaceship"></i>
-                                                <p>{{ _('Upgrade to PRO') }}</p>
+                                            <a href="{{ route('buscaminas.index') }}">
+                                                <i class="tim-icons icon-controller"></i>
+                                                <p>{{ __('Buscaminas') }}</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ route('coinflip.index') }}">
+                                                <i class="tim-icons icon-support-17"></i>
+                                                <p>{{ __('Coinflip') }}</p>
                                             </a>
                                         </li>
                                     </ul>
@@ -311,7 +275,8 @@
             </div>
         </div>
         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            <input type="hidden" name="_token" value="ub2DzAIrgUnghVvu3l3KAbbq0UztNO8yfkrDNm6n">            </form>
+            @csrf
+        </form>
             <div class="fixed-plugin">
     </div>
     <script src="{{ asset('black') }}/js/core/jquery.min.js"></script>

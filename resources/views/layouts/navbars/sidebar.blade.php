@@ -12,63 +12,21 @@
                 </a>
             </li>
             @auth
-            <li>
-                <a data-toggle="collapse" href="#laravel-examples" aria-expanded="true">
-                    <i class="fab fa-laravel" ></i>
-                    <span class="nav-link-text" >{{ __('Laravel Examples') }}</span>
-                    <b class="caret mt-1"></b>
+            <li @if ($pageSlug  == 'profile') class="active " @endif>
+                <a href="{{ route('profile.edit')  }}">
+                    <i class="tim-icons icon-single-02"></i>
+                    <p>{{ __('User Profile') }}</p>
                 </a>
-                <div class="collapse show" id="laravel-examples">
-                    <ul class="nav pl-4">
-                        <li @if ($pageSlug  == 'profile') class="active " @endif>
-                            <a href="{{ route('profile.edit')  }}">
-                                <i class="tim-icons icon-single-02"></i>
-                                <p>{{ __('User Profile') }}</p>
-                            </a>
-                        </li>
-                        @if (Auth::user()->rol == "admin")
-                            <li @if ($pageSlug  == 'users') class="active " @endif>
-                                <a href="{{ route('user.index')  }}">
-                                    <i class="tim-icons icon-bullet-list-67"></i>
-                                    <p>{{ __('User Management') }}</p>
-                                </a>
-                            </li>    
-                        @endif
-                        
-                    </ul>
-                </div>
-            </li> 
+            </li>
+            @if (Auth::user()->rol == "admin")
+                <li @if ($pageSlug  == 'users') class="active " @endif>
+                    <a href="{{ route('user.index')  }}">
+                        <i class="tim-icons icon-bullet-list-67"></i>
+                        <p>{{ __('User Management') }}</p>
+                    </a>
+                </li>    
+                    @endif
             @endauth
-            <li @if ($pageSlug  == 'icons') class="active " @endif>
-                <a href="{{ route('pages.icons') }}">
-                    <i class="tim-icons icon-atom"></i>
-                    <p>{{ __('Icons') }}</p>
-                </a>
-            </li>
-            <li @if ($pageSlug  == 'maps') class="active " @endif>
-                <a href="{{ route('pages.maps') }}">
-                    <i class="tim-icons icon-pin"></i>
-                    <p>{{ __('Maps') }}</p>
-                </a>
-            </li>
-            <li @if ($pageSlug  == 'notifications') class="active " @endif>
-                <a href="{{ route('pages.notifications') }}">
-                    <i class="tim-icons icon-bell-55"></i>
-                    <p>{{ __('Notifications') }}</p>
-                </a>
-            </li>
-            <li @if ($pageSlug == 'tables') class="active " @endif>
-                <a href="{{ route('pages.tables') }}">
-                    <i class="tim-icons icon-puzzle-10"></i>
-                    <p>{{ __('Table List') }}</p>
-                </a>
-            </li>
-            <li @if ($pageSlug == 'typography') class="active " @endif>
-                <a href="{{ route('pages.typography') }}">
-                    <i class="tim-icons icon-align-center"></i>
-                    <p>{{ __('Typography') }}</p>
-                </a>
-            </li>
             <li @if ($pageSlug == 'ruleta') class="active " @endif>
                 <a href="{{ route('ruleta.index') }}">
                     <i class="tim-icons icon-atom"></i>
@@ -85,12 +43,6 @@
                 <a href="{{ route('coinflip.index') }}">
                     <i class="tim-icons icon-support-17"></i>
                     <p>{{ __('Coinflip') }}</p>
-                </a>
-            </li>
-            <li @if ($pageSlug == 'crash') class="active " @endif>
-                <a href="{{ route('crash.index') }}">
-                    <i class="tim-icons icon-support-17"></i>
-                    <p>{{ __('Crash') }}</p>
                 </a>
             </li>
         </ul>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Coinflip;
 use App\CoinflipPartida;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -28,38 +29,59 @@ class CoinflipController extends Controller
      */
     public function store(Request $request)
     {
-        $bet = $request->bet;
-        $side = $request->lado;
-        
-        $coinflipPartida = new CoinflipPartida();
-        $coinflipPartida->idUser1 = Auth::user()->id;
-        $coinflipPartida->status = "Espera";
-        $coinflipPartida->quantity = $bet;
-        $coinflipPartida->user1Side = $side;
+        try{
+            $datos = json_decode($request->datos);
+            if(Auth::user()->balance>$datos->bet){
+                
+                $bet = $datos->bet;
+                $side = $datos->side;
+                
+                $coinflipPartida = new CoinflipPartida();
+                $coinflipPartida->idUser1 = Auth::user()->id;
+                $coinflipPartida->status = "Espera";
+                $coinflipPartida->quantity = $bet;
+                $coinflipPartida->user1Side = $side;
 
-        $coinflipPartida->save();
+                $coinflipPartida->save();
 
-        return redirect()->route('coinflip.index');
+                $estado = true;
+                $mensaje = "Partida creada correctamente";
+            }else{
+                $estado = false;
+                $mensaje = "No dispones de suficiente dinero";
+            }
+
+            $array = [
+                "estado" => $estado,
+                "mensaje" =>$mensaje,
+                "coinflip"=>$coinflipPartida,
+            ];
+        }catch(Exception $e){
+            $array = $e->getMessage();
+        }
+
+        return response()->json($array);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Coinflip  $coinflip
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, CoinflipPartida $coinflip)
-    {
-        $lado = $request->side;
-        $id = Auth::user()->id;
-        $coinflip->idUser2 = $id;
-        $coinflip->user2Side = $lado;
-        $coinflip->status = "Jugando";
-
+    public function entrar($id){
+        try{
+            $coinflip = CoinflipPartida::where('id',$id)->first();
+            $idUser2 = Auth::user()->id;
+            $coinflip->idUser2 = $idUser2;
+            $coinflip->status = "Jugando";
+            if($coinflip->user1Side == "Cara"){
+                $coinflip->user2Side = "Cruz";
+            }else{
+                $coinflip->user2Side = "Cara";
+            }
         $coinflip->save();
-        return redirect()->route('coinflip.index');
+        
+        }catch(Exception $e){
+            $coinflip = $e->getMessage();
+        }
+        
 
+        return response()->json($coinflip);
     }
 
     public function jugar(CoinflipPartida $coinflip){

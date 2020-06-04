@@ -36,12 +36,13 @@ Route::get('/ruleta/balance/{id}','RuletaController@actualizarBalance');
 Route::resource('/crash','CrashController');
 Route::resource('/buscaminas','BuscaminasController')->except('create','edit','show')->middleware('auth');
 Route::resource('/coinflip','CoinflipController')->except('create','edit','show');
+Route::get('/coinflip/entrarpartida/{id}','CoinflipController@entrar')->name('coinflip.entrar');
 Route::put('/coinflip/jugar/{coinflip}','CoinflipController@jugar')->name('coinflip.jugar')->middleware('auth');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware("auth");
 Auth::routes();
 
-
+/*
 Route::group([], function () {
 	Route::get('icons', ['as' => 'pages.icons', 'uses' => 'PageController@icons']);
 	Route::get('maps', ['as' => 'pages.maps', 'uses' => 'PageController@maps']);
@@ -50,7 +51,7 @@ Route::group([], function () {
 	Route::get('tables', ['as' => 'pages.tables', 'uses' => 'PageController@tables']);
 	Route::get('typography', ['as' => 'pages.typography', 'uses' => 'PageController@typography']);
 	Route::get('upgrade', ['as' => 'pages.upgrade', 'uses' => 'PageController@upgrade']);
-});
+});*/
 
 Route::resource('user', 'UserController', ['except' => ['show']])->middleware('rol');
 Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
@@ -63,3 +64,4 @@ Route::get('/pago/{user}',function(){
 	return view('pago.pago');
 })->name('pago.pago')->middleware('auth');
 Route::post('/pago1/{user}','PagoController@pago')->middleware("auth")->name('pago.update');
+

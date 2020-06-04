@@ -40,11 +40,6 @@
                             <a href="{{ route('register') }}" class="link footer-link">{{ __('Crear Cuenta') }}</a>
                         </h6>
                     </div>
-                    <div class="pull-right">
-                        <h6>
-                            <a href="{{ route('password.request') }}" class="link footer-link">{{ __('Recuperar contraseña') }}</a>
-                        </h6>
-                    </div>
                 </div>
             </div>
         </form>

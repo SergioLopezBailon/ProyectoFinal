@@ -66,10 +66,11 @@
 
     let apuestas =[];
 
-    let winner; 
+    let winner;
 
-    function pintarRuleta(winner){
+    let ruleta;
 
+    let idPartidaGirando ;
         
 
         theWheel = new Winwheel({
@@ -109,45 +110,16 @@
                 },
             });
 
-
-            // Loads the tick audio sound in to an audio object.
-            let audio = new Audio('/sound/tick.mp3');
-
-            // This function is called when the sound is to be played.
-            function playSound()
-            {
-                // Stop and rewind the sound if it already happens to be playing.
-                audio.pause();
-                audio.currentTime = 0;
-
-                // Play the sound.
-                audio.play();
-            }
-
-
-            let wheelPower    = 0;
             let wheelSpinning = false;
-
-            function startSpin(winner)
-            {
-
-                if (wheelSpinning == false) {
-
-                    theWheel.animation.stopAngle = theWheel.getRandomForSegment((winner*2)+1);
-                    theWheel.startAnimation();
-
-                    wheelSpinning = true;
-                    
-                }
-            }
-
 
             function alertPrize(indicatedSegment)
             {
-                alert("You have won " + indicatedSegment.name);
+                demo.showNotification('top','center',2,'Ha ganado '+indicatedSegment.name);
                 reset();
                 drawImage();
                 ajaxGet('{{url('/ruleta/balance')}}/'+datosRuleta.id,ganador);
+                wheelSpinning = false;
+                limpiarApuestas();
             }
 
             let imagen =new Image();
@@ -166,7 +138,7 @@
                 }
             };
             
-            imagen.src= '/black/img/triangulo.png';
+            imagen.src= 'http://localhost/proyecto/black/img/triangulo.png';
             function drawImage(){
                 
                 let ctx1;
@@ -184,13 +156,27 @@
                 
             }
 
+            function startSpin(winner)
+            {
+
+                if (wheelSpinning == false) {
+
+                    theWheel.animation.stopAngle = theWheel.getRandomForSegment((winner*2)+1);
+                    theWheel.startAnimation();
+
+                    wheelSpinning = true;
+                    
+                }
+         }
+
             function reset(){
                 theWheel.stopAnimation(false);  
                 theWheel.rotationAngle = 178;     
                 theWheel.draw();  
             }
-    }
-
+    
+    
+  
 
 
 
@@ -237,7 +223,6 @@
 
     ajaxGet("http://localhost/proyecto/ruleta/pregunta",recogerDatos);
 
-    pintarRuleta();
 
     function refrescarInterfaz(){
         switch (datosRuleta.status) {
@@ -372,18 +357,28 @@
         ajaxGet('{{url('/ruleta/pregunta')}}',recogerDatos);    
     },2500);
 
-    jugar = setInterval(function(callback){
-        if(document.getElementById('statusPartida').innerHTML == "Jugando"){
-            ajaxGet('{{url('/ruleta/ganador')}}/'+datosRuleta.id,pintarRuleta);
-            clearInterval(jugar);
+    jugar = setInterval(function(){
+        if((document.getElementById('statusPartida').innerHTML == "Jugando" && wheelSpinning == false) && idPartidaGirando != datosRuleta.id){
+            ajaxGet('{{url('/ruleta/ganador')}}/'+datosRuleta.id,startSpin);
+            idPartidaGirando = datosRuleta.id;
         }
             
     },1000);
     
+
     function ganador(balance){
         document.getElementById('balance').innerHTML = balance;
         
     }
+
+    function limpiarApuestas(){
+        document.getElementById("gray").innerHTML = "";
+        document.getElementById("red").innerHTML = "";
+        document.getElementById("blue").innerHTML = "";
+        document.getElementById("gold").innerHTML = "";
+        document.getElementById('bet').value = "";
+    }
+
 </script>
 
 @endsection

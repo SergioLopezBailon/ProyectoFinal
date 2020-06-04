@@ -21,18 +21,6 @@ class RuletaController extends Controller
         return view('ruleta.index',compact('ruleta'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        
-        
-       
-    }
 
     public function storeRuleta(){
         $ruleta = new RuletaPartida();
